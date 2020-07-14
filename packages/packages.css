@@ -1,0 +1,157 @@
+@font-face {
+    font-family: "AnonymousPro";
+    src: url("anonymousPro-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "AnonymousPro";
+    src: url("anonymousPro-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+main {
+    padding-top: 2rem;
+}
+
+.background {
+    background: url("../images/plans-background.jpg") center/cover;
+    filter: grayscale(40%);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+}
+
+.package,
+.package-middle,
+.package--highlighted {
+    border: 4px solid #0e4f1f;
+    width: 80%;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.package,
+.package--highlighted {
+    border-left: none;
+}
+
+.package-middle {
+    border-right: none;
+    text-align: right;
+}
+
+.package,
+.package-middle {
+    background: rgba(213, 255, 220, 0.90);
+}
+
+.package--highlighted {
+    background: rgba(14, 78, 31, 0.90);
+}
+
+.package:hover,
+.package:active,
+.package-middle:hover,
+.package-middle:active,
+.package--highlighted:hover,
+.package--highlighted:active {
+    border-color: red;
+    animation: push-up 1s ease-out forwards;
+}
+
+.package a,
+.package-middle a,
+.package--highlighted a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 2rem;
+}
+
+.package h1,
+.package-middle h1 {
+    color: inherit;
+    font-size: 2rem;
+}
+
+.package--highlighted h1{
+    color: white;
+    font-size: 2rem;
+}
+
+#package__badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    font-size: 0.8rem;
+    color: white;
+    background: #ff5454;
+    padding: 0.5rem;
+    transform: rotateZ(45deg) translateX(3.5rem) translateY(-1rem);
+    transform-origin: center;
+    width: 12rem;
+    text-align: center;
+}
+
+.package h2,
+.package-middle h2 {
+    color: #858585;
+    font-size: 1.1rem;
+}
+
+.package--highlighted h2 {
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.package p,
+.package-middle p,
+.package--highlighted p {
+    color: black;
+    background: white;
+    border: 1px solid #0e4f1f;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-family: "AnonymousPro", sans-serif;
+    font-weight: bold;
+}
+
+.package-middle {
+    float: right;
+}
+
+.clearfix {
+    clear: both;
+}
+
+@media (min-width: 40rem) {
+    main {
+        max-width: 1500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1500px) {
+    .package,
+    .package-middle,
+    .package--highlighted {
+        border: 4px solid #0e4f1f;
+        /* overflow: hidden; */
+    }
+}
+
+@keyframes push-up {
+    0% {
+        transform: translateY(0);
+    }
+    33% {
+        transform: translateY(-1.5rem);
+    }
+    100% {
+        transform: translateY(-1rem);
+    }
+}
